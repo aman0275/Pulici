@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "4503688464",
+    "project_id": "pulici",
+    "storage_bucket": "pulici.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:4503688464:android:5849dc90665ad768474195",
+        "android_client_info": {
+          "package_name": "com.example.pulici"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "4503688464-ivcssvfe3q7p2aa6pth07dp1o0kp51f9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuccdUjfJvNYEhY-c6EojI_3wXsO5b8kQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "4503688464-ivcssvfe3q7p2aa6pth07dp1o0kp51f9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
