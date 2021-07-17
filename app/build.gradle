@@ -31,6 +31,8 @@ android {
 
 dependencies {
     implementation platform('com.google.firebase:firebase-bom:28.2.1')
+    //implementation 'com.android.support:support-v4:21.0.3'
+
 
     // Declare the dependency for the Firebase Authentication library
     // When using the BoM, you don't specify versions in Firebase library dependencies
