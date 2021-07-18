@@ -42,4 +42,18 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(),Login.class));
         finish();
     }
+
+    public void viewProfile(View view) {
+        startActivity(new Intent(getApplicationContext(),profile.class));
+    }
+
+
+
+    public void addComplain(View view) {
+        startActivity(new Intent(getApplicationContext(),AddPost.class));
+    }
+
+    public void allPost(View view) {
+        startActivity(new Intent(getApplicationContext(),MainActivityUsers.class));
+    }
 }

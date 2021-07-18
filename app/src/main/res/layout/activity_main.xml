@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.284" />
 
     <Button
-        android:id="@+id/logout"
+        android:id="@+id/plogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="logoutFunction"
@@ -30,5 +30,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:rippleColor="#E16D6D" />
+
+    <Button
+        android:id="@+id/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="viewProfile"
+        android:text="Profile"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plogout" />
+
+    <Button
+        android:id="@+id/addComplain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addComplain"
+        android:text="Add complain"
+        android:textColor="#FFFFFF"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/plogout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/allPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="allPost"
+        android:text="All Post"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
