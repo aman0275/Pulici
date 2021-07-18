@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pulici">
-        <activity android:name=".MainActivityUsers"></activity>
+        <activity android:name=".MainActivityUsers2"></activity>
+        <activity android:name=".MainActivityUsers" />
         <activity
             android:name=".AddPost"
             android:screenOrientation="portrait" />

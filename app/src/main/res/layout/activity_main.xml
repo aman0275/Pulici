@@ -65,7 +65,20 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.203" />
+
+    <Button
+        android:id="@+id/allpostuser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="allPostUser"
+        android:text="All post by user"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/allPost" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

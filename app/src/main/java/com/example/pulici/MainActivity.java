@@ -56,4 +56,10 @@ public class MainActivity extends AppCompatActivity {
     public void allPost(View view) {
         startActivity(new Intent(getApplicationContext(),MainActivityUsers.class));
     }
+
+    public void allPostUser(View view) {
+        startActivity(new Intent(getApplicationContext(),MainActivityUsers2.class));
+    }
+
+
 }
