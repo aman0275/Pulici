@@ -11,11 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.pulici.models.Post;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.firestore.DocumentSnapshot;
 
 import org.jetbrains.annotations.NotNull;
 
 public class PostAdapter extends FirebaseRecyclerAdapter<Post,PostAdapter.PostViewHolder>
 {
+    private OnItemClickListner listner;
+
     public PostAdapter(@NonNull @NotNull FirebaseRecyclerOptions<Post> options) {
         super(options);
     }
@@ -44,9 +48,24 @@ public class PostAdapter extends FirebaseRecyclerAdapter<Post,PostAdapter.PostVi
             post_title = itemView.findViewById(R.id.post_title);
             post_name = itemView.findViewById(R.id.post_name);
             post_complaint = itemView.findViewById(R.id.post_complaint);
-
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if(position!=RecyclerView.NO_POSITION && listner!= null){
+                        listner.onItemClick(getSnapshots().getSnapshot(position),position);
+                    }
+                }
+            });
         }
 
+    }
+
+    public interface OnItemClickListner{
+        void onItemClick(DataSnapshot documentSnapshot, int position);
+    }
+    public void setOnItemClickListner(OnItemClickListner listner){
+    this.listner=listner;
     }
 
 }
