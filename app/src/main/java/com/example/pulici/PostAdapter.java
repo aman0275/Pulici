@@ -3,6 +3,7 @@ package com.example.pulici;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -29,6 +30,10 @@ public class PostAdapter extends FirebaseRecyclerAdapter<Post,PostAdapter.PostVi
         postViewHolder.post_title.setText(post.getTopic());
         postViewHolder.post_name.setText(post.getName());
         postViewHolder.post_complaint.setText(post.getComplain());
+        if(post.getStatus()==1){
+            postViewHolder.iv.setVisibility(View.VISIBLE);
+        }
+
     }
 
     @NonNull
@@ -42,12 +47,18 @@ public class PostAdapter extends FirebaseRecyclerAdapter<Post,PostAdapter.PostVi
 
     class PostViewHolder extends RecyclerView.ViewHolder{
         TextView post_title,post_name,post_complaint;
+        ImageView iv;
+
 
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
             post_title = itemView.findViewById(R.id.post_title);
             post_name = itemView.findViewById(R.id.post_name);
             post_complaint = itemView.findViewById(R.id.post_complaint);
+            iv = itemView.findViewById(R.id.don);
+            iv.setVisibility(View.GONE);
+
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
