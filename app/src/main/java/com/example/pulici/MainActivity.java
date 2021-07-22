@@ -46,9 +46,16 @@ public class MainActivity extends AppCompatActivity {
 
         // to make the Navigation drawer icon always appear on the action bar
         //TODO error displaying in line 47 to 49
-        if(getSupportActionBar() != null){
+//        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar_top);
+//        setSupportActionBar(myToolbar);
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setLogo(R.drawable.icon);
+            getSupportActionBar().setDisplayUseLogoEnabled(true);
         }
+//        if(getSupportActionBar() != null){
+//            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        }
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
