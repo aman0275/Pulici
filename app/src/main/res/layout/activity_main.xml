@@ -7,68 +7,13 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/toolbar"
-            android:background="@color/pink"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="@style/Theme.Pulici">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Pulici"
-                android:textAlignment="center"
-                android:textSize="25sp"
-                android:gravity="center"
-                android:fontFamily="@font/montserrat"
-                android:textColor="@color/white"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="20dp" />
-
-<!--                <ImageButton-->
-<!--                    android:id="@+id/account_button"-->
-<!--                    style="@style/Widget.AppCompat.Button.Borderless"-->
-<!--                    android:layout_width="680dp"-->
-<!--                    android:layout_height="41dp"-->
-<!--                    android:layout_alignParentEnd="true"-->
-<!--                    android:layout_alignParentRight="true"-->
-<!--                    android:layout_marginEnd="-308dp"-->
-<!--                    android:layout_marginRight="-308dp"-->
-<!--                    android:src="@drawable/account" />-->
-
-                <androidx.drawerlayout.widget.DrawerLayout
-                    android:id="@+id/my_drawer_layout"
-                    android:layout_width="179dp"
-                    android:layout_height="76dp"
-                    android:layout_marginBottom="-621dp"
-                    tools:context=".MainActivity"
-                    tools:ignore="HardcodedText">
-
-                    <com.google.android.material.navigation.NavigationView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="start"
-                        app:menu="@menu/menu_bar" />
-                </androidx.drawerlayout.widget.DrawerLayout>
-
-            </RelativeLayout>
-
-
-
-
-        </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
     <TextView
@@ -95,5 +40,68 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
         app:rippleColor="#E16D6D" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/pink"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/Theme.Pulici"
+        app:layout_constraintTop_toTopOf="@+id/appBarLayout"
+        tools:layout_editor_absoluteX="0dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Pulici"
+                        android:textAlignment="center"
+                        android:textSize="25sp"
+                        android:gravity="center"
+                        android:fontFamily="@font/montserrat"
+                        android:textColor="@color/white"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="20dp" />
+
+        <!--                <ImageButton-->
+        <!--                    android:id="@+id/account_button"-->
+        <!--                    style="@style/Widget.AppCompat.Button.Borderless"-->
+        <!--                    android:layout_width="680dp"-->
+        <!--                    android:layout_height="41dp"-->
+        <!--                    android:layout_alignParentEnd="true"-->
+        <!--                    android:layout_alignParentRight="true"-->
+        <!--                    android:layout_marginEnd="-308dp"-->
+        <!--                    android:layout_marginRight="-308dp"-->
+        <!--                    android:src="@drawable/account" />-->
+
+                    </RelativeLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/my_drawer_layout"
+        android:layout_width="179dp"
+        android:layout_height="56dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:context=".MainActivity"
+        tools:ignore="HardcodedText">
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:menu="@menu/menu_bar" />
+    </androidx.drawerlayout.widget.DrawerLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

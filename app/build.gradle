@@ -32,6 +32,8 @@ android {
 dependencies {
     implementation platform('com.google.firebase:firebase-bom:28.2.1')
     //implementation 'com.android.support:support-v4:21.0.3'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:26.1.0'
 
 
     // Declare the dependency for the Firebase Authentication library

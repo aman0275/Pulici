@@ -48,14 +48,14 @@ public class MainActivity extends AppCompatActivity {
         //TODO error displaying in line 47 to 49
 //        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar_top);
 //        setSupportActionBar(myToolbar);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setLogo(R.drawable.icon);
-            getSupportActionBar().setDisplayUseLogoEnabled(true);
-        }
-//        if(getSupportActionBar() != null){
+//        if (getSupportActionBar() != null) {
 //            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//            getSupportActionBar().setLogo(R.drawable.icon);
+//            getSupportActionBar().setDisplayUseLogoEnabled(true);
 //        }
+        if(getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
