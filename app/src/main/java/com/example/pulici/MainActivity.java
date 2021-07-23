@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     public DrawerLayout drawerLayout;
     public ActionBarDrawerToggle actionBarDrawerToggle;
 
-    //TODO maybe there is error in this function as well... not very sure... but its a possibility
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         actionBarDrawerToggle.syncState();
 
         // to make the Navigation drawer icon always appear on the action bar
-        //TODO error displaying in line 47 to 49
+
 //        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar_top);
 //        setSupportActionBar(myToolbar);
 //        if (getSupportActionBar() != null) {
