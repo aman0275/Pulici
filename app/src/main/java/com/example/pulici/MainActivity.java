@@ -105,4 +105,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void notice(View view) {
+        Toast.makeText(this, "Not Implemented", Toast.LENGTH_SHORT).show();
+    }
 }

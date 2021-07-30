@@ -123,12 +123,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
-        android:id="@+id/addComplain"
-        android:layout_width="136dp"
-        android:layout_height="62dp"
-        android:onClick="addComplain"
+        android:id="@+id/Notice"
+        android:layout_width="119dp"
+        android:layout_height="54dp"
+        android:onClick="notice"
         android:rotationY="-4"
-        android:text="Add Complaint"
+        android:text="Notice"
         android:textColor="#FFFFFF"
         android:textSize="14dp"
         app:iconTint="#FFFFFF"
