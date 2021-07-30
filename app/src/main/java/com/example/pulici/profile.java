@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -50,6 +54,39 @@ TextView pname, pemail , prole;
         });
 
 
+    }
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.home:
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+
+                return true;
+            case R.id.profile:
+                Toast.makeText(this, "Already On Profile", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.logout:
+                logoutFunction();
+                return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void logoutFunction() {
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(getApplicationContext(),Login.class));
+        finish();
     }
 
     public void plogout(View view) {

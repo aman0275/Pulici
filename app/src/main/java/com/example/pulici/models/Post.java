@@ -1,5 +1,5 @@
 package com.example.pulici.models;
-
+import java.util.Calendar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -11,6 +11,7 @@ public class Post {
       String complain;
      String puserId;
      String cuserId;
+     String cdate;
      int status;
 
     public  String getName() {
@@ -31,6 +32,14 @@ public class Post {
 
     public  String getComplain() {
         return complain;
+    }
+
+    public void setCdate(String cdate) {
+        this.cdate = cdate;
+    }
+
+    public String getCdate() {
+        return cdate;
     }
 
     public void setComplain(String complain) {
@@ -61,8 +70,8 @@ public class Post {
         this.status = status;
     }
 
-    Date date = new Date();
-    private String cdate;
+    Calendar calendar = Calendar.getInstance();
+
 
     FirebaseUser fbUser = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -76,7 +85,7 @@ public class Post {
         this.complain = complain;
         this.puserId = fbUser.getUid();
         this.status = 0;
-        cdate = date.toString();
+        this.cdate = calendar.getTime().toString();
         cuserId = "Pending";
 
     }

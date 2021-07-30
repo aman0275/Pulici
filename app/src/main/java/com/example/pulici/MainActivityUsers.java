@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.example.pulici.models.Post;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,6 +36,7 @@ public class MainActivityUsers extends AppCompatActivity{
     private AlertDialog dialog;
     TextView poptopic,popname,popcomplain,popuserid;
     Button popdone;
+
 
 
     private RecyclerView recyclerView;
@@ -79,6 +82,8 @@ public class MainActivityUsers extends AppCompatActivity{
         popname=postPopupView.findViewById(R.id.popname);
         popcomplain = postPopupView.findViewById(R.id.popcomplain);
         popuserid = postPopupView.findViewById(R.id.popuserid);
+        popdone = postPopupView.findViewById(R.id.done);
+
 
         DatabaseReference mFirebaseDatabase= FirebaseDatabase.getInstance().getReference("Posts").child(com);
         mFirebaseDatabase.addListenerForSingleValueEvent(
@@ -90,10 +95,16 @@ public class MainActivityUsers extends AppCompatActivity{
                         String topic =  dataSnapshot.child("topic").getValue().toString();
                         String complain =  dataSnapshot.child("complain").getValue().toString();
                         String cuserid =  dataSnapshot.child("cuserId").getValue().toString();
+                        String status =  dataSnapshot.child("status").getValue().toString();
                         popname.setText(name);
                         poptopic.setText(topic);
                         popcomplain.setText(complain);
                         popuserid.setText(cuserid);
+                        if(status.equals("1")){
+                            popdone.setEnabled(false);
+                            popdone.setText("completed");
+                        }
+
                     }
 
                     @Override
@@ -101,15 +112,25 @@ public class MainActivityUsers extends AppCompatActivity{
                         //handle databaseError
                         Toast.makeText(MainActivityUsers.this, "Database error", Toast.LENGTH_SHORT).show();
                     }
+
                 });
 
-
+        popdone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mFirebaseDatabase.child("status").setValue(1);
+                FirebaseUser fbUser = FirebaseAuth.getInstance().getCurrentUser();
+                String profileEmail = fbUser.getEmail();
+                mFirebaseDatabase.child("cuserId").setValue(profileEmail);
+                Toast.makeText(MainActivityUsers.this, "Complaint solved", Toast.LENGTH_SHORT).show();
+                popdone.setEnabled(false);
+            }
+        });
 
 
         dialogBuilder.setView(postPopupView);
         dialog= dialogBuilder.create();
         dialog.show();
-
 
 
 

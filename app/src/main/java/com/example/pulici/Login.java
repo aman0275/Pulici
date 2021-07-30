@@ -69,7 +69,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
-                                Toast.makeText(Login.this, "Transferring you to Database", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login.this, "Welcome "+memail, Toast.LENGTH_SHORT).show();
                                 FirebaseUser user = fauth.getCurrentUser();
                                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
                             }else{

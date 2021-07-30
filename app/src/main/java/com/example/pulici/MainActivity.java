@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -34,15 +37,37 @@ public class MainActivity extends AppCompatActivity {
         if (user != null) {
             // Name, email address, and profile photo Url
 
-            String email = user.getEmail();
 
-            Toast.makeText(this, "Welcome "+email, Toast.LENGTH_SHORT).show();
         }
 
 
     }
 
-    public void logoutFunction(View view) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.home:
+                Toast.makeText(this, "Already On Home", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.profile:
+                startActivity(new Intent(getApplicationContext(),profile.class));
+                return true;
+            case R.id.logout:
+                logoutFunction();
+                return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void logoutFunction() {
         FirebaseAuth.getInstance().signOut();
         startActivity(new Intent(getApplicationContext(),Login.class));
         finish();
