@@ -87,6 +87,7 @@ public class Register extends AppCompatActivity {
 //                        FirebaseUser user = fauth.getCurrentUser();
                         FirebaseUser fbUser =FirebaseAuth.getInstance().getCurrentUser();
                         String userId = fbUser.getUid();
+//                        String emailId = fbUser.getUid();
                         DatabaseReference mFirebaseDatabase= FirebaseDatabase.getInstance().getReference("userId").child(userId);
                         mFirebaseDatabase.child("name").setValue(name);
 //                        mFirebaseDatabase.child("users").child(userId).child("fullName").setValue(name);

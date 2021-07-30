@@ -32,6 +32,7 @@ TextView pname, pemail , prole;
         FirebaseUser fbUser =FirebaseAuth.getInstance().getCurrentUser();
         String profileEmail = fbUser.getEmail();
         pemail.setText(profileEmail);
+
         String userId = fbUser.getUid();
         DatabaseReference mFirebaseDatabase= FirebaseDatabase.getInstance().getReference("userId").child(userId);
         mFirebaseDatabase.child("name").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
