@@ -109,6 +109,23 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void notice(View view) {
-        Toast.makeText(this, "Not Implemented", Toast.LENGTH_SHORT).show();
+        progressBar = findViewById(R.id.progressBar3);
+        progressBar.setVisibility(View.VISIBLE);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String userId = user.getUid();
+        DatabaseReference mFirebaseDatabase= FirebaseDatabase.getInstance().getReference("userId").child(userId);
+        mFirebaseDatabase.child("role").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+
+            @Override
+            public void onComplete(@NonNull @org.jetbrains.annotations.NotNull Task<DataSnapshot> task) {
+                final String role =  String.valueOf(Objects.requireNonNull(task.getResult()).getValue());
+                progressBar.setVisibility(View.GONE);
+                if(role.equals("police")){
+                    startActivity(new Intent(getApplicationContext(),AddNotice.class));
+                }else{
+                    startActivity(new Intent(getApplicationContext(),NoticeActivity.class));
+                }
+            }
+        });
     }
 }

@@ -23,9 +23,9 @@ public class AddPost extends AppCompatActivity {
         setContentView(R.layout.activity_add_post);
 
         cname = findViewById(R.id.cname);
-        ctopic = findViewById(R.id.ctopic);
-        ccomplain = findViewById(R.id.ccomplain);
-        addcomplain = findViewById(R.id.addcomplain);
+        ctopic = findViewById(R.id.ntopic);
+        ccomplain = findViewById(R.id.ndesc);
+        addcomplain = findViewById(R.id.addnotice);
 
         addcomplain.setOnClickListener(new View.OnClickListener() {
             @Override
