@@ -33,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar3);
         progressBar.setVisibility(View.GONE);
 
+        Intent intentBackgroundService = new Intent(this,FirebaseMessagingService.class);
+        startService(intentBackgroundService);
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             // Name, email address, and profile photo Url

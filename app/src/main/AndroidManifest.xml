@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pulici">
-        <activity android:name=".MainActivityUsers2"></activity>
+        <activity android:name=".Notice"></activity>
+        <activity android:name=".MainActivityUsers2" />
         <activity android:name=".MainActivityUsers" />
         <activity
             android:name=".AddPost"
@@ -37,6 +38,14 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
+
+        <service
+            android:name=".FirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.RESPOND_VIA_MESSAGE" />
+            </intent-filter>
+        </service>
 
         <meta-data
             android:name="preloaded_fonts"
