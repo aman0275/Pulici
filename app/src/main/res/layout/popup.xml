@@ -11,23 +11,23 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/montserrat"
         android:text="Solved By-"
         android:textColor="?android:attr/textColorPrimary"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintHorizontal_bias="0.023"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/popcomplain" />
 
     <TextView
         android:id="@+id/popuserid"
-        android:layout_width="169dp"
+        android:layout_width="149dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/montserrat"
         android:text="Pending"
         android:textColor="?android:attr/textColorPrimary"
@@ -91,10 +91,9 @@
         android:text="Mark As Done"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/popuserid"
         app:layout_constraintTop_toBottomOf="@+id/popcomplain"
-        app:layout_constraintVertical_bias="0.188" />
+        app:layout_constraintVertical_bias="0.195" />
 
     <ImageView
         android:id="@+id/imageView2"
